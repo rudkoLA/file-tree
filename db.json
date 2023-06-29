@@ -1,19 +1,106 @@
 {
-  "posts": [
+  "folders": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "name": "root",
+      "id": "root",
+      "isFolder": true,
+      "parentId": null
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "name": "folder1",
+      "id": "folder1",
+      "isFolder": true,
+      "parentId": "root"
+    },
+    {
+      "name": "folder2",
+      "id": "folder2",
+      "isFolder": true,
+      "parentId": "root"
+    },
+    {
+      "name": "folder3",
+      "id": "folder3",
+      "isFolder": true,
+      "parentId": "root"
+    },
+    {
+      "name": "folder11",
+      "id": "folder11",
+      "isFolder": true,
+      "parentId": "folder1"
+    },
+    {
+      "name": "folder12",
+      "id": "folder12",
+      "isFolder": true,
+      "parentId": "folder1"
+    },
+    {
+      "name": "folder13",
+      "id": "folder13",
+      "isFolder": true,
+      "parentId": "folder1"
+    },
+    {
+      "name": "folder14",
+      "id": "folder14",
+      "isFolder": true,
+      "parentId": "folder1"
+    },
+    {
+      "name": "folder21",
+      "id": "folder21",
+      "isFolder": true,
+      "parentId": "folder2"
+    },
+    {
+      "name": "folder22",
+      "id": "folder22",
+      "isFolder": true,
+      "parentId": "folder2"
+    },
+    {
+      "name": "folder23",
+      "id": "folder23",
+      "isFolder": true,
+      "parentId": "folder2"
+    },
+    {
+      "name": "folder24",
+      "id": "folder24",
+      "isFolder": true,
+      "parentId": "folder2"
+    },
+    {
+      "name": "folder31",
+      "id": "folder31",
+      "isFolder": true,
+      "parentId": "folder3"
+    },
+    {
+      "name": "folder32",
+      "id": "folder32",
+      "isFolder": true,
+      "parentId": "folder3"
+    },
+    {
+      "name": "folder33",
+      "id": "folder33",
+      "isFolder": true,
+      "parentId": "folder3"
+    },
+    {
+      "name": "folder34",
+      "id": "folder34",
+      "isFolder": true,
+      "parentId": "folder3"
+    },
+    {
+      "name": "folder111",
+      "id": "folder111",
+      "isFolder": true,
+      "parentId": "folder11"
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }
