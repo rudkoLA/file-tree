@@ -1,5 +1,4 @@
-import { useState } from "react";
-import Tree from "./components/tree";
+import Tree from "./components/Tree";
 import "./App.css";
 
 function App() {

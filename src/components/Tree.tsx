@@ -3,10 +3,12 @@ import TreeView from "@mui/lab/TreeView";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import TreeItem from "@mui/lab/TreeItem";
-import DeleteIcon from "@mui/icons-material/Delete";
 import { fetchFolders } from "../utils/api";
+import FolderComponent from "./FolderComponent";
+import { useSelector, useDispatch } from "react-redux";
+import { log } from "npmlog";
 
-interface IFolder {
+export interface IFolder {
   id: string;
   name: string;
   parentId: string;
@@ -19,15 +21,17 @@ function getTreeItemsFromData(list: IFolder[], parentId: string): IFolder[] {
 }
 
 export default function Tree() {
-  const [folders, setFolders] = useState<IFolder[]>([]);
+  const folders = useSelector((state: any) => state.folders.folders);
+  console.log("folders", folders);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const asyncFunc = async () => {
       const folders = await fetchFolders();
-      setFolders(folders);
+      dispatch({ type: "SET_FOLDERS", payload: folders });
     };
     asyncFunc();
-  }, []);
+  }, [dispatch]);
 
   const treeItems = getTreeItemsFromData(folders, "root");
   console.log("treeItems", treeItems);
@@ -61,7 +65,15 @@ const TreeList: FC<ITreeListProps> = ({ folders, rootId = "root" }) => {
     <>
       {treeItems.map((item) => (
         <>
-          <TreeItem key={item.id} nodeId={item.id} label={item.name}>
+          <TreeItem
+            key={item.id}
+            nodeId={item.id}
+            label={
+              <>
+                <FolderComponent folder={item} />
+              </>
+            }
+          >
             <TreeList folders={folders} rootId={item.id} />
           </TreeItem>
         </>

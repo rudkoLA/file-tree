@@ -85,14 +85,8 @@
       "parentId": "folder3"
     },
     {
-      "name": "folder33",
-      "id": "folder33",
-      "isFolder": true,
-      "parentId": "folder3"
-    },
-    {
       "name": "folder34",
-      "id": "folder34",
+      "id": "folder33",
       "isFolder": true,
       "parentId": "folder3"
     },

@@ -68,19 +68,19 @@ export const fetchFolder = (id: string) => {
 };
 
 export const createFolder = (folder: any) => {
-  const req = postRequest(`${SERVER_URL_DEV}folders`, folder);
+  const req = postRequest(`${SERVER_URL_DEV}folders/${folder.id}`, folder);
 
   return req;
 };
 
 export const updateFolder = (folder: any) => {
-  const req = putRequest(`${SERVER_URL_DEV}folders`, folder);
+  const req = putRequest(`${SERVER_URL_DEV}folders/${folder.id}`, folder);
 
   return req;
 };
 
 export const deleteFolder = (folder: any) => {
-  const req = deleteRequest(`${SERVER_URL_DEV}folders`, folder);
+  const req = deleteRequest(`${SERVER_URL_DEV}folders/${folder.id}`, folder);
 
   return req;
 };
