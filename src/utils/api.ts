@@ -68,7 +68,7 @@ export const fetchFolder = (id: string) => {
 };
 
 export const createFolder = (folder: any) => {
-  const req = postRequest(`${SERVER_URL_DEV}folders/${folder.id}`, folder);
+  const req = postRequest(`${SERVER_URL_DEV}folders`, folder);
 
   return req;
 };
@@ -84,44 +84,3 @@ export const deleteFolder = (folder: any) => {
 
   return req;
 };
-
-// export const fetchBook = (book: string) => {
-//   const req = getRequest(`${SERVER_URL}data\\${book}.json`);
-
-//   return req;
-// };
-
-// export const fetchWord = (id: string) => {
-//   const req = getRequest(`${SERVER_URL_DEV}words/${id}`);
-
-//   return req;
-// };
-
-// export const fetchWordsByBooksAndChapters = (
-//   book: TBookName,
-//   chapter: number
-// ) => {
-//   const req = getRequest(
-//     `${SERVER_URL_DEV}words?book=${book}&chapter=${chapter}`
-//   );
-
-//   return req;
-// };
-
-// export const createWord = (word: IWord) => {
-//   const req = postRequest(SERVER_URL_DEV + "words", word);
-
-//   return req;
-// };
-
-// export const updateWord = (word: IWord) => {
-//   const req = putRequest(`${SERVER_URL_DEV}words/${word.id}`, word);
-
-//   return req;
-// };
-
-// export const deleteWord = (word: IWord) => {
-//   const req = deleteRequest(`${SERVER_URL_DEV}words/${word.id}`);
-
-//   return req;
-// };

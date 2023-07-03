@@ -29,7 +29,7 @@ export const folderReducer = (state: any = initialState, action: any) => {
     case "ADD_FOLDER":
       return {
         ...state,
-        folders: [...state.folders, action.payload],
+        folders: [action.payload, ...state.folders],
       };
     case "SET_FOLDERS":
       return {

@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from "react";
+import { FC, useEffect } from "react";
 import TreeView from "@mui/lab/TreeView";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
@@ -6,7 +6,6 @@ import TreeItem from "@mui/lab/TreeItem";
 import { fetchFolders } from "../utils/api";
 import FolderComponent from "./FolderComponent";
 import { useSelector, useDispatch } from "react-redux";
-import { log } from "npmlog";
 
 export interface IFolder {
   id: string;
@@ -70,7 +69,10 @@ const TreeList: FC<ITreeListProps> = ({ folders, rootId = "root" }) => {
             nodeId={item.id}
             label={
               <>
-                <FolderComponent folder={item} />
+                <FolderComponent
+                  folder={item}
+                  hasChildren={!!getTreeItemsFromData(folders, item.id).length}
+                />
               </>
             }
           >
