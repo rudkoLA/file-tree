@@ -5,7 +5,12 @@ import { createFolder, deleteFolder, updateFolder } from "../utils/api";
 import { useState, KeyboardEvent } from "react";
 import { Input } from "@mui/material";
 import { useDispatch } from "react-redux";
-
+import {
+  setFolders as setFoldersAction,
+  createFolder as createFolderAction,
+  deleteFolder as deleteFolderAction,
+  updateFolder as updateFolderAction,
+} from "../store/reducer";
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function FolderComponent({ folder, hasChildren }: any) {
   const [editing, setEditing] = useState(false);
@@ -21,7 +26,7 @@ export default function FolderComponent({ folder, hasChildren }: any) {
     }
 
     await deleteFolder(folder);
-    dispatch({ type: "DELETE_FOLDER", payload: folder });
+    dispatch(deleteFolderAction(folder));
   };
 
   const handleEdit = (e: any) => {
@@ -37,7 +42,7 @@ export default function FolderComponent({ folder, hasChildren }: any) {
         ...folder,
         name: (event.target as HTMLInputElement).value,
       };
-      dispatch({ type: "UPDATE_FOLDER", payload: newFolder });
+      dispatch(updateFolderAction(folder));
       updateFolder(newFolder);
       setEditing(false);
     }
@@ -47,7 +52,7 @@ export default function FolderComponent({ folder, hasChildren }: any) {
   };
 
   const handleAdd = async (e: any) => {
-    // e.stopPropagation();
+    e.stopPropagation();
     const newFolder = {
       name: "New Folder",
       id: Math.trunc(Math.random() * 100000).toString(),
@@ -55,9 +60,8 @@ export default function FolderComponent({ folder, hasChildren }: any) {
       parentId: folder.id,
     };
 
-    console.log("newFolder", newFolder);
     const addedFolder = await createFolder(newFolder);
-    dispatch({ type: "ADD_FOLDER", payload: addedFolder });
+    dispatch(createFolderAction(folder));
   };
 
   return (

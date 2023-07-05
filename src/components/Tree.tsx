@@ -6,6 +6,7 @@ import TreeItem from "@mui/lab/TreeItem";
 import { fetchFolders } from "../utils/api";
 import FolderComponent from "./FolderComponent";
 import { useSelector, useDispatch } from "react-redux";
+import { setFolders } from "../store/reducer";
 
 export interface IFolder {
   id: string;
@@ -27,7 +28,7 @@ export default function Tree() {
   useEffect(() => {
     const asyncFunc = async () => {
       const folders = await fetchFolders();
-      dispatch({ type: "SET_FOLDERS", payload: folders });
+      dispatch(setFolders(folders));
     };
     asyncFunc();
   }, [dispatch]);
