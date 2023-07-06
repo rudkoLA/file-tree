@@ -1,7 +1,5 @@
 import { IFolder } from "../components/Tree";
 
-// const SERVER_URL = "/";
-
 const SERVER_URL_DEV = "http://localhost:3004/";
 
 const jsonRequest = (url: string, options = {}) => {

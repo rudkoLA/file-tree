@@ -1,23 +1,28 @@
 import DeleteIcon from "@mui/icons-material/Delete";
 import AddIcon from "@mui/icons-material/Add";
 import EditIcon from "@mui/icons-material/Edit";
-import { createFolder, deleteFolder, updateFolder } from "../utils/api";
 import { useState, KeyboardEvent } from "react";
 import { Input } from "@mui/material";
-import { useDispatch } from "react-redux";
+import { useAppDispatch } from "../store";
 import {
   createFolder as createFolderAction,
   deleteFolder as deleteFolderAction,
   updateFolder as updateFolderAction,
 } from "../store/foldersSlice";
+import { IFolder } from "./Tree";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export default function FolderComponent({ folder, hasChildren }: any) {
+interface IFolderProps {
+  folder: IFolder;
+  hasChildren: boolean;
+}
+
+export default function FolderComponent({ folder, hasChildren }: IFolderProps) {
   const [editing, setEditing] = useState(false);
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const handleDelete = async (e: any) => {
+  const handleDelete = async (
+    e: React.MouseEvent<SVGSVGElement, MouseEvent>
+  ) => {
     if (editing) return;
     e.stopPropagation();
 
@@ -26,11 +31,9 @@ export default function FolderComponent({ folder, hasChildren }: any) {
       return;
     }
 
-    await deleteFolder(folder);
     dispatch(deleteFolderAction(folder));
   };
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const handleEdit = (e: any) => {
+  const handleEdit = (e: React.MouseEvent<SVGSVGElement, MouseEvent>) => {
     e.stopPropagation();
     setEditing(true);
   };
@@ -44,7 +47,6 @@ export default function FolderComponent({ folder, hasChildren }: any) {
         name: (event.target as HTMLInputElement).value,
       };
       dispatch(updateFolderAction(newFolder));
-      updateFolder(newFolder);
       setEditing(false);
     }
     if (event.key === "Escape") {
@@ -52,8 +54,9 @@ export default function FolderComponent({ folder, hasChildren }: any) {
     }
   };
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const handleCreate = async (e: any) => {
+  const handleCreate = async (
+    e: React.MouseEvent<SVGSVGElement, MouseEvent>
+  ) => {
     e.stopPropagation();
     const newFolder = {
       name: "New Folder",
@@ -62,8 +65,7 @@ export default function FolderComponent({ folder, hasChildren }: any) {
       parentId: folder.id,
     };
 
-    const addedFolder = await createFolder(newFolder);
-    dispatch(createFolderAction(addedFolder));
+    dispatch(createFolderAction(newFolder));
   };
 
   return (
