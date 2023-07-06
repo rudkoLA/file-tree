@@ -25,19 +25,13 @@
       "parentId": "root"
     },
     {
-      "name": "folder12",
-      "id": "folder12",
-      "isFolder": true,
-      "parentId": "folder1"
-    },
-    {
-      "name": "folder13",
+      "name": "nopetestestsetsetse",
       "id": "folder13",
       "isFolder": true,
       "parentId": "folder1"
     },
     {
-      "name": "folder14",
+      "name": "folder",
       "id": "folder14",
       "isFolder": true,
       "parentId": "folder1"
@@ -103,40 +97,10 @@
       "parentId": "folder1"
     },
     {
-      "name": "a\\",
-      "id": "36291",
-      "isFolder": true,
-      "parentId": "folder1"
-    },
-    {
-      "name": "a",
-      "id": "70835",
-      "isFolder": true,
-      "parentId": "folder1"
-    },
-    {
-      "name": "a",
-      "id": "42415",
-      "isFolder": true,
-      "parentId": "folder1"
-    },
-    {
       "name": "New Folder",
       "id": "46590",
       "isFolder": true,
       "parentId": "49232"
-    },
-    {
-      "name": "New Folder",
-      "id": "32866",
-      "isFolder": true,
-      "parentId": "folder12"
-    },
-    {
-      "name": "New Folder",
-      "id": "99289",
-      "isFolder": true,
-      "parentId": "folder12"
     },
     {
       "name": "New Folder",
@@ -176,201 +140,9 @@
     },
     {
       "name": "New Folder",
-      "id": "94918",
-      "isFolder": true,
-      "parentId": "folder1"
-    },
-    {
-      "name": "New Folder",
-      "id": "6548",
-      "isFolder": true,
-      "parentId": "folder1"
-    },
-    {
-      "name": "New Folder",
-      "id": "71457",
-      "isFolder": true,
-      "parentId": "folder1"
-    },
-    {
-      "name": "New Folder",
-      "id": "27733",
-      "isFolder": true,
-      "parentId": "folder1"
-    },
-    {
-      "name": "New Folder",
       "id": "50806",
       "isFolder": true,
       "parentId": "folder2"
-    },
-    {
-      "name": "New Folder",
-      "id": "16948",
-      "isFolder": true,
-      "parentId": "50806"
-    },
-    {
-      "name": "New Folder",
-      "id": "63439",
-      "isFolder": true,
-      "parentId": "16948"
-    },
-    {
-      "name": "New Folder",
-      "id": "92631",
-      "isFolder": true,
-      "parentId": "63439"
-    },
-    {
-      "name": "New Folder",
-      "id": "57691",
-      "isFolder": true,
-      "parentId": "92631"
-    },
-    {
-      "name": "New Folder",
-      "id": "15518",
-      "isFolder": true,
-      "parentId": "57691"
-    },
-    {
-      "name": "New Folder",
-      "id": "83591",
-      "isFolder": true,
-      "parentId": "57691"
-    },
-    {
-      "name": "New Folder",
-      "id": "53405",
-      "isFolder": true,
-      "parentId": "57691"
-    },
-    {
-      "name": "New Folder",
-      "id": "34309",
-      "isFolder": true,
-      "parentId": "57691"
-    },
-    {
-      "name": "New Folder",
-      "id": "82104",
-      "isFolder": true,
-      "parentId": "57691"
-    },
-    {
-      "name": "New Folder",
-      "id": "40500",
-      "isFolder": true,
-      "parentId": "6548"
-    },
-    {
-      "name": "New Folder",
-      "id": "79876",
-      "isFolder": true,
-      "parentId": "6548"
-    },
-    {
-      "name": "New Folder",
-      "id": "74816",
-      "isFolder": true,
-      "parentId": "6548"
-    },
-    {
-      "name": "New Folder",
-      "id": "61727",
-      "isFolder": true,
-      "parentId": "6548"
-    },
-    {
-      "name": "New Folder",
-      "id": "20498",
-      "isFolder": true,
-      "parentId": "6548"
-    },
-    {
-      "name": "New Folder",
-      "id": "53510",
-      "isFolder": true,
-      "parentId": "6548"
-    },
-    {
-      "name": "New Folder",
-      "id": "91646",
-      "isFolder": true,
-      "parentId": "6548"
-    },
-    {
-      "name": "New Folder",
-      "id": "77541",
-      "isFolder": true,
-      "parentId": "6548"
-    },
-    {
-      "name": "New Folder",
-      "id": "56510",
-      "isFolder": true,
-      "parentId": "6548"
-    },
-    {
-      "name": "New Folder",
-      "id": "26961",
-      "isFolder": true,
-      "parentId": "6548"
-    },
-    {
-      "name": "New Folder",
-      "id": "64232",
-      "isFolder": true,
-      "parentId": "6548"
-    },
-    {
-      "name": "New Folder",
-      "id": "19288",
-      "isFolder": true,
-      "parentId": "6548"
-    },
-    {
-      "name": "New Folder",
-      "id": "11375",
-      "isFolder": true,
-      "parentId": "6548"
-    },
-    {
-      "name": "New Folder",
-      "id": "77661",
-      "isFolder": true,
-      "parentId": "53510"
-    },
-    {
-      "name": "New Folder",
-      "id": "87238",
-      "isFolder": true,
-      "parentId": "53510"
-    },
-    {
-      "name": "New Folder",
-      "id": "17513",
-      "isFolder": true,
-      "parentId": "53510"
-    },
-    {
-      "name": "New Folder",
-      "id": "30953",
-      "isFolder": true,
-      "parentId": "53510"
-    },
-    {
-      "name": "New Folder",
-      "id": "38126",
-      "isFolder": true,
-      "parentId": "53510"
-    },
-    {
-      "name": "New Folder",
-      "id": "38885",
-      "isFolder": true,
-      "parentId": "53510"
     }
   ]
 }

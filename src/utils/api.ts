@@ -1,4 +1,6 @@
-const SERVER_URL = "/";
+import { IFolder } from "../components/Tree";
+
+// const SERVER_URL = "/";
 
 const SERVER_URL_DEV = "http://localhost:3004/";
 
@@ -67,19 +69,19 @@ export const fetchFolder = (id: string) => {
   return req;
 };
 
-export const createFolder = (folder: any) => {
+export const createFolder = (folder: IFolder) => {
   const req = postRequest(`${SERVER_URL_DEV}folders`, folder);
 
   return req;
 };
 
-export const updateFolder = (folder: any) => {
+export const updateFolder = (folder: IFolder) => {
   const req = putRequest(`${SERVER_URL_DEV}folders/${folder.id}`, folder);
 
   return req;
 };
 
-export const deleteFolder = (folder: any) => {
+export const deleteFolder = (folder: IFolder) => {
   const req = deleteRequest(`${SERVER_URL_DEV}folders/${folder.id}`, folder);
 
   return req;

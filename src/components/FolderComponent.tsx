@@ -6,16 +6,17 @@ import { useState, KeyboardEvent } from "react";
 import { Input } from "@mui/material";
 import { useDispatch } from "react-redux";
 import {
-  setFolders as setFoldersAction,
   createFolder as createFolderAction,
   deleteFolder as deleteFolderAction,
   updateFolder as updateFolderAction,
-} from "../store/reducer";
+} from "../store/foldersSlice";
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function FolderComponent({ folder, hasChildren }: any) {
   const [editing, setEditing] = useState(false);
   const dispatch = useDispatch();
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleDelete = async (e: any) => {
     if (editing) return;
     e.stopPropagation();
@@ -28,7 +29,7 @@ export default function FolderComponent({ folder, hasChildren }: any) {
     await deleteFolder(folder);
     dispatch(deleteFolderAction(folder));
   };
-
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleEdit = (e: any) => {
     e.stopPropagation();
     setEditing(true);
@@ -42,7 +43,7 @@ export default function FolderComponent({ folder, hasChildren }: any) {
         ...folder,
         name: (event.target as HTMLInputElement).value,
       };
-      dispatch(updateFolderAction(folder));
+      dispatch(updateFolderAction(newFolder));
       updateFolder(newFolder);
       setEditing(false);
     }
@@ -51,7 +52,8 @@ export default function FolderComponent({ folder, hasChildren }: any) {
     }
   };
 
-  const handleAdd = async (e: any) => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const handleCreate = async (e: any) => {
     e.stopPropagation();
     const newFolder = {
       name: "New Folder",
@@ -61,7 +63,7 @@ export default function FolderComponent({ folder, hasChildren }: any) {
     };
 
     const addedFolder = await createFolder(newFolder);
-    dispatch(createFolderAction(folder));
+    dispatch(createFolderAction(addedFolder));
   };
 
   return (
@@ -77,7 +79,7 @@ export default function FolderComponent({ folder, hasChildren }: any) {
         <span>{folder.name}</span>
       )}
 
-      <AddIcon fontSize="inherit" onClick={handleAdd} />
+      <AddIcon fontSize="inherit" onClick={handleCreate} />
       <EditIcon fontSize="inherit" onClick={handleEdit} />
       <DeleteIcon fontSize="inherit" onClick={handleDelete} />
     </div>

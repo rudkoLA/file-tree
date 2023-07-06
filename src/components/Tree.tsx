@@ -6,7 +6,7 @@ import TreeItem from "@mui/lab/TreeItem";
 import { fetchFolders } from "../utils/api";
 import FolderComponent from "./FolderComponent";
 import { useSelector, useDispatch } from "react-redux";
-import { setFolders } from "../store/reducer";
+import { setFolders } from "../store/foldersSlice";
 
 export interface IFolder {
   id: string;
@@ -21,8 +21,8 @@ function getTreeItemsFromData(list: IFolder[], parentId: string): IFolder[] {
 }
 
 export default function Tree() {
-  const folders = useSelector((state: any) => state.folders.folders);
-  console.log("folders", folders);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const folders = useSelector((state: any) => state.folder.folders);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -32,9 +32,6 @@ export default function Tree() {
     };
     asyncFunc();
   }, [dispatch]);
-
-  const treeItems = getTreeItemsFromData(folders, "root");
-  console.log("treeItems", treeItems);
 
   return (
     <TreeView
@@ -55,7 +52,6 @@ interface ITreeListProps {
 
 const TreeList: FC<ITreeListProps> = ({ folders, rootId = "root" }) => {
   const treeItems = getTreeItemsFromData(folders, rootId);
-  console.log("treeItems", treeItems);
 
   if (treeItems.length === 0) {
     return null;
